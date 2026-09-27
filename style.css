@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box; /* inclut padding et border dans la largeur/hauteur totale */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e1d3e0;
+
+    display: flex; 
+    justify-content: center; /* centre horizontalement */
+    align-items: center; /* centre verticalement */
+
+    min-height: 100vh; /* prend au minimum toute la hauteur de l'écran */
+}
+
+.todo-container {
+    background-color: rgb(140, 77, 124);
+    width: 320px;
+    min-height: 550px; /* plus long, comme un telephone*/
+    padding: 30px 20px;
+
+    border-radius: 25px; /* arrondit les coins */
+
+    box-shadow: 0 4px 12px rgba(15, 2, 14, 0.1); /* ajoute une ombre autour du conteneur */
+    overflow-y: auto; /* si les tâches deviennent nombreuses, on peut scroller */ 
+}
+
+h1 {
+    text-align: center; /* centre le titre */
+}
+
+.input-section {
+    display: flex; /* met l'input et le bouton sur la même ligne */
+    gap: 10px; /* espace entre l'input et le bouton */
+}
+
+#taskInput {
+    flex: 1; /* l'input prend l'espace disponible */
+
+    padding: 10px;
+
+    border: 1px solid #180606;
+    border-radius: 6px;
+}
+
+#addButton {
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer; /* affiche une main quand on passe sur le bouton */
+    background-color: #d783b9; /* couleur du bouton Add */
+    color: white; /* couleur du texte */
+}
+
+#taskList {
+    list-style: none; /* enlève les puces de la liste */
+    padding: 0;
+    margin-top: 20px;
+}
+
+.task {
+    display: flex;
+
+    justify-content: space-between; /* espace les éléments vers les extrémités */
+    align-items: center; /* aligne les éléments verticalement */
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    background-color: #de92c8;
+
+    border-radius: 6px;
+}
+
+.task-text {
+    flex: 1; /* le texte de la tâche prend l'espace disponible */
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through; /* barre le texte quand la tâche est terminée */
+    opacity: 0.6; /* rend la tâche terminée plus transparente */
+}
+
+.delete-button {
+    border: none;
+
+    cursor: pointer;
+
+    padding: 6px 10px;
+
+    border-radius: 5px;
+
+    background-color: #f2ecef; /* couleur du bouton Delete */
+    color: #4a2340;
+}
+
+#message {
+    font-size: 14px;
+    margin-top: 10px;
+}
