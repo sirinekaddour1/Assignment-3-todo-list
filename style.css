@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box; /* inclut padding et border dans la largeur/hauteur totale */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e1d3e0;
+
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center; /* centre verticalement */
+
+    min-height: 100vh; /* prend au minimum toute la hauteur de l'écran */
+
+    padding: 20px; /* ajoute un petit espace autour de l'application */
+}
+
+.todo-container {
+    background-color: rgb(140, 77, 124);
+
+    width: 340px;
+    min-height: 600px; /* plus long, comme un téléphone */
+
+    padding: 30px 20px;
+
+    border-radius: 25px; /* arrondit les coins */
+
+    box-shadow: 0 4px 12px rgba(15, 2, 14, 0.1); /* ajoute une ombre autour du conteneur */
+
+    overflow-y: auto; /* permet de scroller si les tâches deviennent nombreuses */
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* petit texte au-dessus du titre */
+.subtitle {
+    text-align: center;
+
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #f0d9ea;
+}
+
+
+h1 {
+    text-align: center; /* centre le titre */
+
+    margin-top: 6px;
+    margin-bottom: 25px;
+
+    color: white;
+}
+
+
+/* zone contenant l'input et le bouton Add */
+.input-section {
+    display: flex; /* met l'input et le bouton sur la même ligne */
+
+    gap: 10px; /* espace entre l'input et le bouton */
+}
+
+
+#taskInput {
+    flex: 1; /* l'input prend l'espace disponible */
+
+    padding: 10px;
+
+    border: 1px solid #180606;
+    border-radius: 6px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+/* change légèrement le style quand on clique dans l'input */
+#taskInput:focus {
+    border-color: #d783b9;
+
+    box-shadow: 0 0 0 2px rgba(215, 131, 185, 0.2);
+}
+
+
+#addButton {
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer; /* affiche une main quand on passe sur le bouton */
+
+    background-color: #d783b9; /* couleur du bouton Add */
+
+    color: white; /* couleur du texte */
+
+    font-weight: bold;
+}
+
+
+/* effet quand on passe sur Add */
+#addButton:hover {
+    background-color: #c36aa7;
+}
+
+
+/* message d'erreur */
+#message {
+    font-size: 14px;
+
+    margin-top: 10px;
+
+    min-height: 18px;
+
+    color: #ffd4e8;
+}
+
+
+/* section contenant Pending ou Completed */
+.tasks-section {
+    margin-top: 20px;
+}
+
+
+/* titre Pending Tasks / Completed Tasks */
+.tasks-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    font-size: 17px;
+
+    color: white;
+}
+
+
+/* les deux listes utilisent le même style */
+#pendingTaskList,
+#completedTaskList {
+    list-style: none; /* enlève les puces de la liste */
+
+    padding: 0;
+
+    margin: 0;
+}
+
+
+/* style d'une tâche */
+.task {
+    display: flex;
+
+    justify-content: space-between; /* espace les éléments vers les extrémités */
+    align-items: center; /* aligne les éléments verticalement */
+
+    gap: 10px;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    background-color: #de92c8;
+
+    border-radius: 8px;
+
+    transition: 0.2s; /* animation légère */
+}
+
+
+/* petit effet quand on passe sur une tâche */
+.task:hover {
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 10px rgba(15, 2, 14, 0.12);
+}
+
+
+/* texte de la tâche */
+.task-text {
+    flex: 1; /* le texte prend l'espace disponible */
+
+    cursor: pointer;
+}
+
+
+/* style appliqué à une tâche terminée */
+.completed {
+    text-decoration: line-through; /* barre le texte */
+
+    opacity: 0.6; /* rend la tâche terminée plus transparente */
+}
+
+
+/* les tâches terminées ont aussi un fond un peu différent */
+#completedTaskList .task {
+    background-color: #cfa8c6;
+}
+
+
+/* bouton Delete */
+.delete-button {
+    border: none;
+
+    cursor: pointer;
+
+    padding: 6px 10px;
+
+    border-radius: 5px;
+
+    background-color: #f2ecef;
+
+    color: #4a2340;
+
+    transition: 0.2s;
+}
+
+
+/* effet quand on passe sur Delete */
+.delete-button:hover {
+    background-color: #f7d5e7;
+}
+
+
+/* rend l'application adaptée aux petits écrans */
+@media (max-width: 400px) {
+
+    .todo-container {
+        width: 100%;
+
+        min-height: 90vh;
+    }
+}

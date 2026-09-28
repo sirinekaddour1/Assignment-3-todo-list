@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="todo-container">
+
+        <!-- petit sous-titre pour donner un style d'application -->
+        <p class="subtitle">Stay organized</p>
+
+        <h1>My To-Do List</h1>
+
+        <!-- là où l’utilisateur écrit sa tâche -->
+        <div class="input-section">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a task"
+            >
+
+            <!-- le bouton pour ajouter la tâche -->
+            <button id="addButton">
+                Add
+            </button>
+
+        </div>
+
+        <!-- message affiché si l'utilisateur essaye d'ajouter une tâche vide -->
+        <p id="message"></p>
+
+
+        <!-- section des tâches qui ne sont pas encore terminées -->
+        <section class="tasks-section">
+
+            <h2 class="tasks-title">
+                Pending Tasks
+            </h2>
+
+            <!-- JavaScript va ajouter ici les tâches non terminées -->
+            <ul id="pendingTaskList"></ul>
+
+        </section>
+
+
+        <!-- section des tâches terminées -->
+        <section class="tasks-section">
+
+            <h2 class="tasks-title">
+                Completed Tasks
+            </h2>
+
+            <!-- JavaScript va ajouter ici les tâches terminées -->
+            <ul id="completedTaskList"></ul>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
